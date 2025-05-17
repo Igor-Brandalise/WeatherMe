@@ -1,6 +1,6 @@
 import type{ WeatherData } from "../types/weather";
 
-const API_key = '57184b40df4176460dfb1ca582c93b64'
+const API_key = import.meta.env.VITE_OPENWEATHER_KEY
 
 export const weatherByCity = async (city:string): Promise<WeatherData> => {
     const response = await fetch(
