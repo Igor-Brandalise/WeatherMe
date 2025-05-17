@@ -30,12 +30,18 @@ function App() {
       {weatherData ? (
         <div>
           <h2>{weatherData.name}</h2> {/* Nome da cidade */}
- 
-        <p>{weatherData.weather[0].description}</p> {/* Descrição do clima (ex: ensolarado) */}
-        <p>Temperatura: {weatherData.main.temp}°C</p> {/* Temperatura */}
-        <p>Sensação térmica: {weatherData.main.feels_like}°C</p> {/* Sensação térmica */}
-        <p>Umidade: {weatherData.main.humidity}%</p> {/* Umidade */}
-        <p>Vento: {weatherData.wind.speed} km/h</p> {/* Velocidade do vento */}
+          <img
+            src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`}
+            alt={weatherData.weather[0].description}
+          />
+          <p>{weatherData.weather[0].description}</p>{" "}
+          {/* Descrição do clima (ex: ensolarado) */}
+          <p>Temperatura: {weatherData.main.temp}°C</p> {/* Temperatura */}
+          <p>Sensação térmica: {weatherData.main.feels_like}°C</p>{" "}
+          {/* Sensação térmica */}
+          <p>Umidade: {weatherData.main.humidity}%</p> {/* Umidade */}
+          <p>Vento: {weatherData.wind.speed} km/h</p>{" "}
+          {/* Velocidade do vento */}
         </div>
       ) : (
         <p>Busque uma cidade para ver o clima!</p>
