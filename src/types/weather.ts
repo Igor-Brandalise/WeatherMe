@@ -16,6 +16,6 @@ export interface WeatherData {
 
     }[];
     wind:{
-        peed: number;
+        speed: number;
     }
 }
