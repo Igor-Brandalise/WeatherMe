@@ -30,10 +30,13 @@ function App() {
       const results = await fetchCities(debouncedQuery);
 
       // Remove duplicatas combinando nome + lat + lon como chave única
-      const uniqueCities = results.filter((city, index, self) =>
-        index === self.findIndex(c =>
-          c.name === city.name && c.lat === city.lat && c.lon === city.lon
-        )
+      const uniqueCities = results.filter(
+        (city, index, self) =>
+          index ===
+          self.findIndex(
+            (c) =>
+              c.name === city.name && c.lat === city.lat && c.lon === city.lon
+          )
       );
 
       setCitySuggestions(uniqueCities);
@@ -68,44 +71,50 @@ function App() {
   };
 
   return (
-    <div>
-      <input
-        type="text"
-        value={query}
-        onChange={handleInputChange}
-        placeholder="Digite uma cidade"
-      />
-      {citySuggestions.length > 0 && (
-        <ul style={{ border: "1px solid #ccc", paddingLeft: 0 }}>
-          {citySuggestions.map((city) => (
-            <li
-              key={`${city.lat}-${city.lon}`}
-              onClick={() => handleSelectCity(city)}
-              style={{ cursor: "pointer", listStyle: "none", padding: "5px" }}
-            >
-              {city.name} {city.state ? `- ${city.state}` : ""}, {city.country}
-            </li>
-          ))}
-        </ul>
-      )}
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-[#0F172A] to-[#253349] text-white">
+      <div className="">
+        <input
+          type="text"
+          value={query}
+          onChange={handleInputChange}
+          placeholder="Digite uma cidade"
+          className="border-1 p-2 text-center border-gray-400"
+        />
+        {citySuggestions.length > 0 && (
+          <ul style={{ border: "1px solid #ccc", paddingLeft: 0 }}>
+            {citySuggestions.map((city) => (
+              <li
+                key={`${city.lat}-${city.lon}`}
+                onClick={() => handleSelectCity(city)}
+                style={{ cursor: "pointer", listStyle: "none", padding: "5px" }}
+              >
+                {city.name} {city.state ? `- ${city.state}` : ""},{" "}
+                {city.country}
+              </li>
+            ))}
+          </ul>
+        )}
 
-      <button onClick={handleSearch}>Buscar</button>
+        <button onClick={handleSearch} className="m-3 border border-gray-400 w-[4.5em] h-[2em]">
+          Buscar
+        </button>
+      </div>
 
       {weatherData ? (
-        <div>
+        <div className="flex flex-col p-5 ">
           <h2>{weatherData.name}</h2>
           <img
             src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`}
             alt={weatherData.weather[0].description}
           />
-          <p>{weatherData.weather[0].description}</p>
-          <p>Temperatura: {weatherData.main.temp}°C</p>
-          <p>Sensação térmica: {weatherData.main.feels_like}°C</p>
-          <p>Umidade: {weatherData.main.humidity}%</p>
-          <p>Vento: {weatherData.wind.speed} km/h</p>
+          <p className="p-1 font-bold">{weatherData.weather[0].description}</p>
+          <p className="p-1 font-bold">Temperatura: {weatherData.main.temp}°C</p>
+          <p className="p-1 font-bold">Sensação térmica: {weatherData.main.feels_like}°C</p>
+          <p className="p-1 font-bold">Umidade: {weatherData.main.humidity}%</p>
+          <p className="p-1 font-bold">Vento: {weatherData.wind.speed} km/h</p>
         </div>
       ) : (
-        <p>Busque uma cidade para ver o clima!</p>
+        <p className="mt-4">Busque uma cidade para ver o clima!</p>
       )}
     </div>
   );
