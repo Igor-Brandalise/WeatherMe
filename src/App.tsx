@@ -13,10 +13,11 @@ function App() {
 
   // Debounce para não buscar a cada letra digitada imediatamente
   const [debouncedQuery, setDebouncedQuery] = useState(query);
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setDebouncedQuery(query);
-    }, 500);
+    }, 550);
     return () => clearTimeout(timer);
   }, [query]);
 
@@ -26,14 +27,14 @@ function App() {
       setCitySuggestions([]);
       return;
     }
+
     const fetchData = async () => {
       const results = await fetchCities(debouncedQuery);
 
       // Remove duplicatas combinando nome + lat + lon como chave única
       const uniqueCities = results.filter(
         (city, index, self) =>
-          index ===
-          self.findIndex(
+          index === self.findIndex(
             (c) =>
               c.name === city.name && c.lat === city.lat && c.lon === city.lon
           )
@@ -95,7 +96,10 @@ function App() {
           </ul>
         )}
 
-        <button onClick={handleSearch} className="m-3 border border-gray-400 w-[4.5em] h-[2em]">
+        <button
+          onClick={handleSearch}
+          className="m-3 border border-gray-400 w-[4.5em] h-[2em]"
+        >
           Buscar
         </button>
       </div>
@@ -108,8 +112,12 @@ function App() {
             alt={weatherData.weather[0].description}
           />
           <p className="p-1 font-bold">{weatherData.weather[0].description}</p>
-          <p className="p-1 font-bold">Temperatura: {weatherData.main.temp}°C</p>
-          <p className="p-1 font-bold">Sensação térmica: {weatherData.main.feels_like}°C</p>
+          <p className="p-1 font-bold">
+            Temperatura: {weatherData.main.temp}°C
+          </p>
+          <p className="p-1 font-bold">
+            Sensação térmica: {weatherData.main.feels_like}°C
+          </p>
           <p className="p-1 font-bold">Umidade: {weatherData.main.humidity}%</p>
           <p className="p-1 font-bold">Vento: {weatherData.wind.speed} km/h</p>
         </div>
