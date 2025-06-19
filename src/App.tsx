@@ -17,7 +17,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setDebouncedQuery(query);
-    }, 550);
+    }, 380);
     return () => clearTimeout(timer);
   }, [query]);
 
