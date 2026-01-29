@@ -1,20 +1,65 @@
-# 🌦️ WeatherMe - Aplicativo de Previsão do Tempo
+# 🌦️ WeatherMe
 
-Aplicativo de previsão do tempo em tempo real, desenvolvido com React, TypeScript e Tailwind CSS. A aplicação permite buscar por qualquer cidade do mundo e exibe informações climáticas como temperatura, condição do tempo, umidade e velocidade do vento, utilizando os dados da API da [OpenWeather](https://openweathermap.org/api).
+**WeatherMe** é uma aplicação front-end **finalizada** em **React + TypeScript**, que fornece previsões climáticas em tempo real para qualquer cidade do mundo.  
+O projeto consome a **OpenWeather API** para exibir informações como temperatura, condição do tempo, umidade e velocidade do vento, oferecendo uma interface clara, intuitiva e responsiva.
 
-## 🚀 Tecnologias Utilizadas
+---
 
-- ⚛️ **React** 
-- 🟦 **TypeScript** 
-- 🌬️ **Tailwind CSS**
-- ⚡ **Vite** 
-- ☁️ **OpenWeather API** 
+## 🎯 Objetivo do Projeto
 
-## 🧩 Funcionalidades
+- Demonstrar habilidades em consumo de APIs externas  
+- Criar interface interativa e responsiva  
+- Gerenciar estado de forma eficiente com React  
+- Apresentar dados climáticos de forma organizada e prática  
 
-- 🔍 Busca por qualquer cidade no mundo
-- 🌡️ Exibição da temperatura atual
-- 🌥️ Exibição da condição do tempo (ex: nublado, ensolarado, etc)
-- 💧 Umidade do ar
-- 🌬️ Velocidade do vento
-  
+---
+
+## 🚀 Funcionalidades
+
+- Busca de qualquer cidade do mundo  
+- Exibição da temperatura atual  
+- Condição do tempo (ex: ensolarado, nublado, chuva)  
+- Umidade do ar e velocidade do vento  
+- Interface responsiva e organizada  
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+- React  
+- TypeScript  
+- Vite  
+- Tailwind CSS  
+- OpenWeather API  
+
+---
+
+## 🧩 Lógica e Organização
+
+- Componentização da interface para fácil manutenção  
+- Estado gerenciado via React Hooks  
+- Requisições assíncronas para consumo da API  
+- Atualização dinâmica e consistente dos dados  
+
+---
+
+## 📈 Resultados
+
+- Aplicação funcional e estável  
+- Interface intuitiva e responsiva  
+- Código limpo, organizado e escalável  
+
+---
+
+## 🔮 Melhorias Futuras
+
+- Forecast para múltiplos dias  
+- Melhorias visuais e animações  
+- Adição de gráficos climáticos  
+
+---
+
+## 🔗 Links
+
+- **Repositório:** [GitHub](#)  
+- **Deploy:** *(adicione link se houver)*
