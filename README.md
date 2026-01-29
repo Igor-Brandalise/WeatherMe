@@ -61,5 +61,5 @@ O projeto consome a **OpenWeather API** para exibir informações como temperatu
 
 ## 🔗 Links
 
-- **Repositório:** [GitHub](#)  
-- **Deploy:** *(adicione link se houver)*
+- **Repositório:** [GitHub](https://github.com/Igor-Brandalise/WeatherMe)  
+- **Deploy:** https://weather-me-seven.vercel.app/
